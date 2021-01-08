@@ -1,1 +1,1 @@
-# bike-rent
+# Bike Template Website
