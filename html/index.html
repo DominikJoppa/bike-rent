@@ -245,164 +245,363 @@
         </div>
     </div>
     <div class="max-w-7xl mx-auto">
-        <div class="p-8">
-            <ul class="list-reset flex border-b">
-                <li class="p-2">
-                    <a class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-600 hover:bg-white-700 md:py-4 md:text-lg md:px-10 active:bg-white-700 active:text-green" data-select="one"
-                        id="one" href="javascript:void(0)">Active</a>
-                </li>
-                <li class="p-2">
-                    <a class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-600 hover:bg-white-700 md:py-4 md:text-lg md:px-10"
-                        data-select="two" id="two" href="javascript:void(0)">Tab</a>
-                </li>
-                <li class="p-2">
-                    <a class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-600 hover:bg-white-700 md:py-4 md:text-lg md:px-10"
-                        data-select="three" id="three" href="javascript:void(0)">Tab</a>
-                </li>
-            </ul>
-            <div class="content">
-                <div id="tabs1">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ullamcorper, justo non pharetra
-                        pulvinar, risus dui fringilla ante, a auctor dolor massa sed ipsum. Donec vulputate tellus sed
-                        tempor lobortis. Fusce a turpis sit amet mauris fermentum mattis vitae sed metus. Sed auctor
-                        diam eget finibus convallis.</p>
-                </div>
-                <div id="tabs2" class="d-none">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ullamcorper, justo non pharetra
-                        pulvinar, risus dui fringilla ante, a auctor dolor massa sed ipsum. </p>
-                </div>
-                <div id="tabs3" class="d-none">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ullamcorper, justo non pharetra
-                        pulvinar, risus dui fringilla ante, a auctor dolor massa sed ipsum. Donec vulputate tellus sed
-                        tempor lobortis.</p>
-                </div>
-            </div>
+        <div class="lg:text-center py-12">
+            <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight sm:text-4xl">
+                Trasy
+            </p>
         </div>
-    </div>
-    <div class="max-w-7xl mx-auto">
-        <div class="py-12">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="lg:text-center">
-                    <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-black sm:text-4xl">
-                        Trasy
-                    </p>
-                </div>
-                <div class="grid grid-cols-3 gap-4 my-2">
-                    <button type="button" data-select="one" id="one" href="javascript:void(0)"
-                        class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-600 hover:bg-white-700 md:py-4 md:text-lg md:px-10">
-                        Ľahká trasa
-                    </button>
-                    <button type="button" data-select="two" id="two" href="javascript:void(0)"
-                        class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-600 hover:bg-white-700 md:py-4 md:text-lg md:px-10">
-                        Stredná trasa
-                    </button>
-                    <button type="button" data-select="three" id="three" href="javascript:void(0)"
-                        class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-600 hover:bg-white-700 md:py-4 md:text-lg md:px-10">
-                        Ťažká trasa
-                    </button>
-                </div>
+        <div class="flex flex-wrap" id="tabs-id">
+            <div class="w-full">
+                <ul class="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row">
+                    <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+                        <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal text-white bg-green-600"
+                            onclick="changeAtiveTab(event,'tab-low')">
+                            <i class="fas fa-space-shuttle text-base mr-1"></i> Ľahká
+                        </a>
+                    </li>
+                    <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+                        <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal text-green-600 bg-white"
+                            onclick="changeAtiveTab(event,'tab-mid')">
+                            <i class="fas fa-cog text-base mr-1"></i> Stredná
+                        </a>
+                    </li>
+                    <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+                        <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal text-green-600 bg-white"
+                            onclick="changeAtiveTab(event,'tab-high')">
+                            <i class="fas fa-briefcase text-base mr-1"></i> Ťažká
+                        </a>
+                    </li>
+                </ul>
+                <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6">
+                    <div class="px-4 py-5 flex-auto">
+                        <div class="tab-content tab-space">
+                            <div class="block" id="tab-low">
+                                <div class="max-w-screen-xl mx-auto px-4">
 
-                <!-- Container -->
-                <div class="max-w-screen-xl mx-auto px-4">
+                                    <!-- Grid wrapper -->
+                                    <div class="-mx-4 flex flex-wrap">
+                                        <!-- Grid column -->
+                                        <div class="w-full flex flex-col p-4 sm:w-1/2 lg:w-1/3">
+                                            <!-- Column contents -->
+                                            <div class="flex flex-col flex-1 px-5 py-6 bg-white rounded-lg shadow-lg">
+                                                <div class="flex-1">
+                                                    <h2 class="text-gray-900 text-2xl font-bold leading-snug">
+                                                        Ľahká trasa
+                                                    </h2>
+                                                    <p class="mt-2 text-lg">
+                                                        <b>Vzdialenosť: </b> 24km <br>
+                                                        <b>Prevýšenie: </b> 543m <br>
+                                                        <b>Čas:</b> 2hod. <br>
+                                                        <b>Trasa: </b> <br>
+                                                        <hr>
+                                                        Smižany <br>
+                                                        Letanovský mlyn (kamenný Kartuziánský most) <br>
+                                                        Tomášovský výhľad (výhlaď na prielom Hornádu, dolina Bieleho
+                                                        potoka, Čertová
+                                                        sihoť, <br>
+                                                        Vysoké Tatry)
+                                                        Lesnica Čingov <br>
+                                                        Bikšová lúka <br>
+                                                        Košiarný briežok <br>
+                                                        Smižany <br>
+                                                    </p>
+                                                </div>
+                                                <button
+                                                    class="transition duration-500 ease-in-out mt-4 inline-flex items-center px-4 py-1 text-white font-semibold bg-green-700 rounded-md shadow-sm hover:bg-white hover:text-green-700 hover:border-green-700 border-4 border-green-700 modal-trigger"
+                                                    data-modal-id="modal1">
+                                                    Pozrieť mapu
+                                                </button>
+                                            </div>
+                                        </div>
 
-                    <!-- Grid wrapper -->
-                    <div class="-mx-4 flex flex-wrap">
-                        <!-- Grid column -->
-                        <div class="w-full flex flex-col p-4 sm:w-1/2 lg:w-1/3">
-                            <!-- Column contents -->
-                            <div class="flex flex-col flex-1 px-5 py-6 bg-white rounded-lg shadow-lg">
-                                <div class="flex-1">
-                                    <h2 class="text-gray-900 text-2xl font-bold leading-snug">
-                                        Ľahká trasa
-                                    </h2>
-                                    <p class="mt-2 text-lg">
-                                        <b>Vzdialenosť: </b> 24km <br>
-                                        <b>Prevýšenie: </b> 543m <br>
-                                        <b>Čas:</b> 2hod. <br>
-                                        <b>Trasa: </b> <br>
-                                        <hr>
-                                        Smižany <br>
-                                        Letanovský mlyn (kamenný Kartuziánský most) <br>
-                                        Tomášovský výhľad (výhlaď na prielom Hornádu, dolina Bieleho potoka, Čertová
-                                        sihoť, <br>
-                                        Vysoké Tatry)
-                                        Lesnica Čingov <br>
-                                        Bikšová lúka <br>
-                                        Košiarný briežok <br>
-                                        Smižany <br>
-                                    </p>
+                                        <div class="w-full flex flex-col p-4 sm:w-1/2 lg:w-1/3">
+                                            <!-- Column contents -->
+                                            <div class="flex flex-col flex-1 px-5 py-6 bg-white rounded-lg shadow-lg">
+                                                <div class="flex-1">
+                                                    <h2 class="text-gray-900 text-2xl font-bold leading-snug">
+                                                        Ľahká trasa
+                                                    </h2>
+                                                    <p class="mt-2 text-lg">
+                                                        <b>Vzdialenosť: </b> 24km <br>
+                                                        <b>Prevýšenie: </b> 543m <br>
+                                                        <b>Čas:</b> 2hod. <br>
+                                                        <b>Trasa: </b> <br>
+                                                        <hr>
+                                                        Smižany <br>
+                                                        Letanovský mlyn (kamenný Kartuziánský most) <br>
+                                                        Tomášovský výhľad (výhlaď na prielom Hornádu, dolina Bieleho
+                                                        potoka, Čertová
+                                                        sihoť, <br>
+                                                        Vysoké Tatry)
+                                                        Lesnica Čingov <br>
+                                                        Bikšová lúka <br>
+                                                        Košiarný briežok <br>
+                                                        Smižany <br>
+                                                    </p>
+                                                </div>
+                                                <button
+                                                    class="transition duration-500 ease-in-out mt-4 inline-flex items-center px-4 py-1 text-white font-semibold bg-green-700 rounded-md shadow-sm hover:bg-white hover:text-green-700 hover:border-green-700 border-4 border-green-700 modal-trigger"
+                                                    data-modal-id="modal1">
+                                                    Pozrieť mapu
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <div class="w-full flex flex-col p-4 sm:w-1/2 lg:w-1/3">
+                                            <!-- Column contents -->
+                                            <div class="flex flex-col flex-1 px-5 py-6 bg-white rounded-lg shadow-lg">
+                                                <div class="flex-1">
+                                                    <h2 class="text-gray-900 text-2xl font-bold leading-snug">
+                                                        Ľahká trasa
+                                                    </h2>
+                                                    <p class="mt-2 text-lg">
+                                                        <b>Vzdialenosť: </b> 24km <br>
+                                                        <b>Prevýšenie: </b> 543m <br>
+                                                        <b>Čas:</b> 2hod. <br>
+                                                        <b>Trasa: </b> <br>
+                                                        <hr>
+                                                        Smižany <br>
+                                                        Letanovský mlyn (kamenný Kartuziánský most) <br>
+                                                        Tomášovský výhľad (výhlaď na prielom Hornádu, dolina Bieleho
+                                                        potoka, Čertová
+                                                        sihoť, <br>
+                                                        Vysoké Tatry)
+                                                        Lesnica Čingov <br>
+                                                        Bikšová lúka <br>
+                                                        Košiarný briežok <br>
+                                                        Smižany <br>
+                                                    </p>
+                                                </div>
+                                                <button
+                                                    class="transition duration-500 ease-in-out mt-4 inline-flex items-center px-4 py-1 text-white font-semibold bg-green-700 rounded-md shadow-sm hover:bg-white hover:text-green-700 hover:border-green-700 border-4 border-green-700 modal-trigger"
+                                                    data-modal-id="modal1">
+                                                    Pozrieť mapu
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
                                 </div>
-                                <button
-                                    class="transition duration-500 ease-in-out mt-4 inline-flex items-center px-4 py-1 text-white font-semibold bg-green-700 rounded-md shadow-sm hover:bg-white hover:text-green-700 hover:border-green-700 border-4 border-green-700 modal-trigger"
-                                    data-modal-id="modal1">
-                                    Pozrieť mapu
-                                </button>
+
                             </div>
-                        </div>
+                            <div class="hidden" id="tab-mid">
+                                <div class="max-w-screen-xl mx-auto px-4">
 
-                        <!-- Grid column -->
-                        <div class="w-full flex flex-col p-4 sm:w-1/2 lg:w-1/3">
-                            <!-- Column contents -->
-                            <div class="flex flex-col flex-1 px-5 py-6 bg-white rounded-lg shadow-lg">
-                                <div class="flex-1">
-                                    <h2 class="text-gray-900 text-2xl font-bold leading-snug">
-                                        Ľahká trasa
-                                    </h2>
-                                    <p class="mt-2 text-lg">
-                                        <b>Vzdialenosť: </b> 24km <br>
-                                        <b>Prevýšenie: </b> 543m <br>
-                                        <b>Čas:</b> 2hod. <br>
-                                        <b>Trasa: </b> <br>
-                                        <hr>
-                                        Smižany <br>
-                                        Letanovský mlyn (kamenný Kartuziánský most) <br>
-                                        Tomášovský výhľad (výhlaď na prielom Hornádu, dolina Bieleho potoka, Čertová
-                                        sihoť, <br>
-                                        Vysoké Tatry)
-                                        Lesnica Čingov <br>
-                                        Bikšová lúka <br>
-                                        Košiarný briežok <br>
-                                        Smižany <br>
-                                    </p>
+                                    <!-- Grid wrapper -->
+                                    <div class="-mx-4 flex flex-wrap">
+                                        <!-- Grid column -->
+                                        <div class="w-full flex flex-col p-4 sm:w-1/2 lg:w-1/3">
+                                            <!-- Column contents -->
+                                            <div class="flex flex-col flex-1 px-5 py-6 bg-white rounded-lg shadow-lg">
+                                                <div class="flex-1">
+                                                    <h2 class="text-gray-900 text-2xl font-bold leading-snug">
+                                                        Stredná trasa
+                                                    </h2>
+                                                    <p class="mt-2 text-lg">
+                                                        <b>Vzdialenosť: </b> 24km <br>
+                                                        <b>Prevýšenie: </b> 543m <br>
+                                                        <b>Čas:</b> 2hod. <br>
+                                                        <b>Trasa: </b> <br>
+                                                        <hr>
+                                                        Smižany <br>
+                                                        Letanovský mlyn (kamenný Kartuziánský most) <br>
+                                                        Tomášovský výhľad (výhlaď na prielom Hornádu, dolina Bieleho
+                                                        potoka, Čertová
+                                                        sihoť, <br>
+                                                        Vysoké Tatry)
+                                                        Lesnica Čingov <br>
+                                                        Bikšová lúka <br>
+                                                        Košiarný briežok <br>
+                                                        Smižany <br>
+                                                    </p>
+                                                </div>
+                                                <button
+                                                    class="transition duration-500 ease-in-out mt-4 inline-flex items-center px-4 py-1 text-white font-semibold bg-green-700 rounded-md shadow-sm hover:bg-white hover:text-green-700 hover:border-green-700 border-4 border-green-700 modal-trigger"
+                                                    data-modal-id="modal1">
+                                                    Pozrieť mapu
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <div class="w-full flex flex-col p-4 sm:w-1/2 lg:w-1/3">
+                                            <!-- Column contents -->
+                                            <div class="flex flex-col flex-1 px-5 py-6 bg-white rounded-lg shadow-lg">
+                                                <div class="flex-1">
+                                                    <h2 class="text-gray-900 text-2xl font-bold leading-snug">
+                                                        Stredná trasa
+                                                    </h2>
+                                                    <p class="mt-2 text-lg">
+                                                        <b>Vzdialenosť: </b> 24km <br>
+                                                        <b>Prevýšenie: </b> 543m <br>
+                                                        <b>Čas:</b> 2hod. <br>
+                                                        <b>Trasa: </b> <br>
+                                                        <hr>
+                                                        Smižany <br>
+                                                        Letanovský mlyn (kamenný Kartuziánský most) <br>
+                                                        Tomášovský výhľad (výhlaď na prielom Hornádu, dolina Bieleho
+                                                        potoka, Čertová
+                                                        sihoť, <br>
+                                                        Vysoké Tatry)
+                                                        Lesnica Čingov <br>
+                                                        Bikšová lúka <br>
+                                                        Košiarný briežok <br>
+                                                        Smižany <br>
+                                                    </p>
+                                                </div>
+                                                <button
+                                                    class="transition duration-500 ease-in-out mt-4 inline-flex items-center px-4 py-1 text-white font-semibold bg-green-700 rounded-md shadow-sm hover:bg-white hover:text-green-700 hover:border-green-700 border-4 border-green-700 modal-trigger"
+                                                    data-modal-id="modal1">
+                                                    Pozrieť mapu
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <div class="w-full flex flex-col p-4 sm:w-1/2 lg:w-1/3">
+                                            <!-- Column contents -->
+                                            <div class="flex flex-col flex-1 px-5 py-6 bg-white rounded-lg shadow-lg">
+                                                <div class="flex-1">
+                                                    <h2 class="text-gray-900 text-2xl font-bold leading-snug">
+                                                        Stredná trasa
+                                                    </h2>
+                                                    <p class="mt-2 text-lg">
+                                                        <b>Vzdialenosť: </b> 24km <br>
+                                                        <b>Prevýšenie: </b> 543m <br>
+                                                        <b>Čas:</b> 2hod. <br>
+                                                        <b>Trasa: </b> <br>
+                                                        <hr>
+                                                        Smižany <br>
+                                                        Letanovský mlyn (kamenný Kartuziánský most) <br>
+                                                        Tomášovský výhľad (výhlaď na prielom Hornádu, dolina Bieleho
+                                                        potoka, Čertová
+                                                        sihoť, <br>
+                                                        Vysoké Tatry)
+                                                        Lesnica Čingov <br>
+                                                        Bikšová lúka <br>
+                                                        Košiarný briežok <br>
+                                                        Smižany <br>
+                                                    </p>
+                                                </div>
+                                                <button
+                                                    class="transition duration-500 ease-in-out mt-4 inline-flex items-center px-4 py-1 text-white font-semibold bg-green-700 rounded-md shadow-sm hover:bg-white hover:text-green-700 hover:border-green-700 border-4 border-green-700 modal-trigger"
+                                                    data-modal-id="modal1">
+                                                    Pozrieť mapu
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
                                 </div>
-                                <button href="#"
-                                    class="transition duration-500 ease-in-out mt-4 inline-flex items-center px-4 py-1 text-white font-semibold bg-green-700 rounded-md shadow-sm hover:bg-white hover:text-green-700 hover:border-green-700 border-4 border-green-700 modal-trigger"
-                                    data-modal-id="modal2">
-                                    Pozrieť mapu
-                                </button>
                             </div>
-                        </div>
+                            <div class="hidden" id="tab-high">
+                                <div class="max-w-screen-xl mx-auto px-4">
 
-                        <!-- Grid column -->
-                        <div class="w-full flex flex-col p-4 sm:w-1/2 lg:w-1/3">
-                            <!-- Column contents -->
-                            <div class="flex flex-col flex-1 px-5 py-6 bg-white rounded-lg shadow-lg">
-                                <div class="flex-1">
-                                    <h2 class="text-gray-900 text-2xl font-bold leading-snug">
-                                        Ľahká trasa
-                                    </h2>
-                                    <p class="mt-2 text-lg">
-                                        <b>Vzdialenosť: </b> 24km <br>
-                                        <b>Prevýšenie: </b> 543m <br>
-                                        <b>Čas:</b> 2hod. <br>
-                                        <b>Trasa: </b> <br>
-                                        <hr>
-                                        Smižany <br>
-                                        Letanovský mlyn (kamenný Kartuziánský most) <br>
-                                        Tomášovský výhľad (výhlaď na prielom Hornádu, dolina Bieleho potoka, Čertová
-                                        sihoť, <br>
-                                        Vysoké Tatry)
-                                        Lesnica Čingov <br>
-                                        Bikšová lúka <br>
-                                        Košiarný briežok <br>
-                                        Smižany <br>
-                                    </p>
+                                    <!-- Grid wrapper -->
+                                    <div class="-mx-4 flex flex-wrap">
+                                        <!-- Grid column -->
+                                        <div class="w-full flex flex-col p-4 sm:w-1/2 lg:w-1/3">
+                                            <!-- Column contents -->
+                                            <div class="flex flex-col flex-1 px-5 py-6 bg-white rounded-lg shadow-lg">
+                                                <div class="flex-1">
+                                                    <h2 class="text-gray-900 text-2xl font-bold leading-snug">
+                                                        Ťažká trasa
+                                                    </h2>
+                                                    <p class="mt-2 text-lg">
+                                                        <b>Vzdialenosť: </b> 24km <br>
+                                                        <b>Prevýšenie: </b> 543m <br>
+                                                        <b>Čas:</b> 2hod. <br>
+                                                        <b>Trasa: </b> <br>
+                                                        <hr>
+                                                        Smižany <br>
+                                                        Letanovský mlyn (kamenný Kartuziánský most) <br>
+                                                        Tomášovský výhľad (výhlaď na prielom Hornádu, dolina Bieleho
+                                                        potoka, Čertová
+                                                        sihoť, <br>
+                                                        Vysoké Tatry)
+                                                        Lesnica Čingov <br>
+                                                        Bikšová lúka <br>
+                                                        Košiarný briežok <br>
+                                                        Smižany <br>
+                                                    </p>
+                                                </div>
+                                                <button
+                                                    class="transition duration-500 ease-in-out mt-4 inline-flex items-center px-4 py-1 text-white font-semibold bg-green-700 rounded-md shadow-sm hover:bg-white hover:text-green-700 hover:border-green-700 border-4 border-green-700 modal-trigger"
+                                                    data-modal-id="modal1">
+                                                    Pozrieť mapu
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <div class="w-full flex flex-col p-4 sm:w-1/2 lg:w-1/3">
+                                            <!-- Column contents -->
+                                            <div class="flex flex-col flex-1 px-5 py-6 bg-white rounded-lg shadow-lg">
+                                                <div class="flex-1">
+                                                    <h2 class="text-gray-900 text-2xl font-bold leading-snug">
+                                                        Ťažká trasa
+                                                    </h2>
+                                                    <p class="mt-2 text-lg">
+                                                        <b>Vzdialenosť: </b> 24km <br>
+                                                        <b>Prevýšenie: </b> 543m <br>
+                                                        <b>Čas:</b> 2hod. <br>
+                                                        <b>Trasa: </b> <br>
+                                                        <hr>
+                                                        Smižany <br>
+                                                        Letanovský mlyn (kamenný Kartuziánský most) <br>
+                                                        Tomášovský výhľad (výhlaď na prielom Hornádu, dolina Bieleho
+                                                        potoka, Čertová
+                                                        sihoť, <br>
+                                                        Vysoké Tatry)
+                                                        Lesnica Čingov <br>
+                                                        Bikšová lúka <br>
+                                                        Košiarný briežok <br>
+                                                        Smižany <br>
+                                                    </p>
+                                                </div>
+                                                <button
+                                                    class="transition duration-500 ease-in-out mt-4 inline-flex items-center px-4 py-1 text-white font-semibold bg-green-700 rounded-md shadow-sm hover:bg-white hover:text-green-700 hover:border-green-700 border-4 border-green-700 modal-trigger"
+                                                    data-modal-id="modal1">
+                                                    Pozrieť mapu
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <div class="w-full flex flex-col p-4 sm:w-1/2 lg:w-1/3">
+                                            <!-- Column contents -->
+                                            <div class="flex flex-col flex-1 px-5 py-6 bg-white rounded-lg shadow-lg">
+                                                <div class="flex-1">
+                                                    <h2 class="text-gray-900 text-2xl font-bold leading-snug">
+                                                        Ťažká trasa
+                                                    </h2>
+                                                    <p class="mt-2 text-lg">
+                                                        <b>Vzdialenosť: </b> 24km <br>
+                                                        <b>Prevýšenie: </b> 543m <br>
+                                                        <b>Čas:</b> 2hod. <br>
+                                                        <b>Trasa: </b> <br>
+                                                        <hr>
+                                                        Smižany <br>
+                                                        Letanovský mlyn (kamenný Kartuziánský most) <br>
+                                                        Tomášovský výhľad (výhlaď na prielom Hornádu, dolina Bieleho
+                                                        potoka, Čertová
+                                                        sihoť, <br>
+                                                        Vysoké Tatry)
+                                                        Lesnica Čingov <br>
+                                                        Bikšová lúka <br>
+                                                        Košiarný briežok <br>
+                                                        Smižany <br>
+                                                    </p>
+                                                </div>
+                                                <button
+                                                    class="transition duration-500 ease-in-out mt-4 inline-flex items-center px-4 py-1 text-white font-semibold bg-green-700 rounded-md shadow-sm hover:bg-white hover:text-green-700 hover:border-green-700 border-4 border-green-700 modal-trigger"
+                                                    data-modal-id="modal1">
+                                                    Pozrieť mapu
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
                                 </div>
-                                <button href="#"
-                                    class="transition duration-500 ease-in-out mt-4 inline-flex items-center px-4 py-1 text-white font-semibold bg-green-700 rounded-md shadow-sm hover:bg-white hover:text-green-700 hover:border-green-700 border-4 border-green-700 modal-trigger"
-                                    data-modal-id="modal3">
-                                    Pozrieť mapu
-                                </button>
                             </div>
                         </div>
                     </div>
@@ -460,39 +659,31 @@
         </section>
     </div>
     <script src="./js/main.js"></script>
-
-</body>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
-    document.getElementById("one").onclick = function () { showTab(this) };
-    document.getElementById("two").onclick = function () { showTab(this) };
-    document.getElementById("three").onclick = function () { showTab(this) };
-
-    function showTab(e) {
-        let selectType = $(e).attr("data-select");
-        if (selectType == 'one') {
-            $("#tabs2,#tabs3").hide();
-            $("#tabs1").show();
-            $("#one").addClass('text-blue-800 active');
-            $("#two,#three").removeClass('text-blue-800 active');
-
-        } else if (selectType == 'two') {
-
-            $("#tabs1,#tabs3").hide();
-            $("#tabs2").show();
-            $("#two").addClass('text-blue-800 active');
-            $("#one,#three").removeClass('text-blue-800 active').addClass('text-blue-400');
-
-        } else if (selectType == 'three') {
-
-            $("#tabs2,#tabs1").hide();
-            $("#tabs3").show();
-            $("#three").addClass('text-blue-800 active');
-            $("#one,#two").removeClass('text-blue-800 active').addClass('text-blue-400');
-
+    <script type="text/javascript">
+        function changeAtiveTab(event, tabID) {
+            let element = event.target;
+            while (element.nodeName !== "A") {
+                element = element.parentNode;
+            }
+            ulElement = element.parentNode.parentNode;
+            aElements = ulElement.querySelectorAll("li > a");
+            tabContents = document.getElementById("tabs-id").querySelectorAll(".tab-content > div");
+            for (let i = 0; i < aElements.length; i++) {
+                aElements[i].classList.remove("text-white");
+                aElements[i].classList.remove("bg-green-600");
+                aElements[i].classList.add("text-green-600");
+                aElements[i].classList.add("bg-white");
+                tabContents[i].classList.add("hidden");
+                tabContents[i].classList.remove("block");
+            }
+            element.classList.remove("text-green-600");
+            element.classList.remove("bg-white");
+            element.classList.add("text-white");
+            element.classList.add("bg-green-600");
+            document.getElementById(tabID).classList.remove("hidden");
+            document.getElementById(tabID).classList.add("block");
         }
-    }
-</script>
+    </script>
+</body>
 
 </html>
